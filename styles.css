@@ -1,0 +1,329 @@
+/* Resetting margin, padding, and box-sizing for all elements to ensure consistency across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styling for the body element: setting a clean, modern sans-serif font (Roboto) and background color */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333; /* Dark gray for text readability */
+  background: #f9f9f9; /* Light gray background for minimalistic design */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Specific font settings for h1 and h2, giving a more elegant, serif typeface */
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700; /* Increase weight for bolder headings */
+  letter-spacing: 1px; /* Slight letter spacing for elegant look */
+  text-transform: uppercase; /* Transform text to uppercase for importance */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add subtle shadow for depth */
+}
+
+h1 {
+  font-size: 4.5rem;
+  color: #ffcc00;; /* Gold color to make the main title stand out */
+}
+
+/* Styling for section headings */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #000000; 
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #000000; 
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+
+/* Styling the header to take up the full viewport height and apply a background image with a dark overlay */
+header {
+  height: 100vh; /* Full viewport height for a hero section */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+              url('/img/v2.png') no-repeat center 35%/cover; /* Dark gradient overlay over the background image */
+  display: flex; /* Flexbox for centering content */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  text-align: center; /* Center text */
+  color: white; /* White text for contrast against dark background */
+  position: relative; /* Allows for layering of child elements if necessary */
+}
+
+/* Centering the content inside the header and applying a fade-in animation */
+.header-content {
+  display: flex; /* Flexbox for layout */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Horizontally center elements */
+  justify-content: center; /* Vertically center elements */
+  height: 100vh; /* Ensure content is vertically centered relative to viewport height */
+  text-align: center; /* Center-align text */
+  animation: fadeInDown 1.5s ease; /* Smooth fade-in animation when the page loads */
+}
+
+/* Large font size and bottom margin for the main heading */
+.header-content h1 {
+  font-size: 4rem; /* Large, attention-grabbing font size */
+  margin-bottom: 1rem; /* Spacing between the heading and subtitle */
+}
+
+/* Styling for the subtitle: different font family for a distinctive, serif look */
+.subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-style: italic; /* Italic style for emphasis */
+  font-weight: 400; /* Lighter weight for elegance */
+  color: #ffffff; /* Softer gray */
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+
+/* Styling for the 'scroll down' button */
+.scroll-down  {
+  width: 200px; /* Fixed width to ensure consistent button size */
+  color: #fff; /* White text */
+  border: 2px solid #fff; /* White border */
+  padding: 0.5rem 2rem; /* Padding for space around the text */
+  border-radius: 30px; /* Rounded corners */
+  text-decoration: none; /* Remove underline from link */
+  font-size: 1.2rem; /* Button text size */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the button: changing background and text color */
+.scroll-down:hover {
+  background-color: white; /* Button background changes to white on hover */
+  color: #333; /* Button text changes to dark gray on hover */
+}
+
+/* Styling for the floating navigation button at the bottom right */
+.floating-nav {
+  position: fixed; /* Fixed position at the bottom right of the viewport */
+  bottom: 20px; /* 20px from the bottom */
+  right: 20px; /* 20px from the right */
+  z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+/* Circular button styling for the navigation */
+.nav-button {
+  background-color: #3498db; /* Blue background */
+  color: white; /* White icon */
+  border: none; /* No border */
+  border-radius: 50%; /* Fully rounded */
+  padding: 15px; /* Padding inside the button */
+  font-size: 1.5rem; /* Size of the icon */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease; /* Smooth scale effect on hover */
+}
+
+/* Hover effect: slightly enlarging the button */
+.nav-button:hover {
+  transform: scale(1.1); /* Scale up the button on hover */
+}
+
+/* Initially hiding the navigation menu */
+.nav-menu {
+  display: none; /* Hidden by default */
+  position: absolute; /* Positioned relative to the nav button */
+  bottom: 60px; /* 60px from the bottom */
+  right: 0; /* Align to the right */
+  background-color: rgba(52, 152, 219, 0.9); /* Semi-transparent blue background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px; /* Padding inside the menu */
+}
+
+/* Styling for each navigation link */
+.nav-menu a {
+  display: block; /* Block-level element */
+  color: white; /* White text */
+  text-decoration: none; /* No underline */
+  font-family: 'Roboto', sans-serif; /* Consistent font with body text */
+  padding: 10px; /* Padding inside each link */
+  text-align: center; /* Center text */
+}
+
+/* Hover effect for navigation links */
+.nav-menu a:hover {
+  background-color: #2980b9; /* Darker blue background on hover */
+  border-radius: 5px; /* Slight rounding on hover */
+}
+
+/* Language toggle button styling */
+.lang-toggle {
+  position: absolute; /* Positioned at the top right */
+  top: 20px; /* 20px from the top */
+  right: 20px; /* 20px from the right */
+  z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+/* Styling for each language toggle button */
+.lang-toggle button {
+  background-color: #3498db; /* Blue background */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding inside the button */
+  margin: 0 5px; /* 5px margin between buttons */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background color transition on hover */
+}
+
+/* Hover effect for language toggle buttons */
+.lang-toggle button:hover {
+  background-color: #2980b9; /* Darker blue background on hover */
+}
+
+/* About, Gallery, and Timeline sections */
+#about, #gallery, #timeline {
+  max-width: 1200px; /* Max width for content */
+  margin: 2rem auto; /* Center content with auto margins */
+  padding: 2rem; /* Padding inside the section */
+  opacity: 1; /* Ensure content is visible */
+}
+
+/* Styling for paragraphs inside the about section */
+#about p {
+  margin-bottom: 1.5rem; /* Space between paragraphs */
+  line-height: 1.6; /* Line height for better readability */
+  font-size: 1.1rem; /* Slightly larger font size */
+  text-align: justify; /* Justified text */
+  text-indent: 2rem; /* Indentation for first line */
+}
+
+/* General paragraph styling */
+p {
+  font-size: 1.1rem; /* Paragraph text size */
+  line-height: 1.8; /* Line height for improved readability */
+  text-align: center; /* Centered text */
+}
+
+/* Grid layout for the gallery */
+.gallery-grid {
+  display: grid; /* CSS grid for the gallery */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid with minimum column size */
+  gap: 2rem; /* Space between grid items */
+  padding: 2rem; /* Padding inside the gallery section */
+}
+
+/* Styling for each gallery image */
+.gallery-grid img {
+  width: 100%; /* Image takes up full width of the grid cell */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling and shadow effect */
+}
+
+/* Hover effect for gallery images */
+.gallery-grid img:hover {
+  transform: scale(1.1); /* Scale up image on hover */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Timeline section with left border */
+.timeline {
+  border-left: 4px solid #3498db; /* Blue left border */
+  padding-left: 2rem; /* Padding to separate text from the border */
+  position: relative; /* Positioned for additional elements */
+}
+
+/* Timeline events, styled as flexbox for layout */
+.timeline-event {
+  position: relative;
+  margin-bottom: 2rem; /* Space between events */
+  display: flex; /* Flexbox for layout */
+  justify-content: flex-start; /* Align content to the left */
+}
+
+/* Styling for event titles */
+.timeline-event h3 {
+  font-size: 1.8rem; /* Event title size */
+  color: #3498db; /* Blue color */
+}
+
+/* Styling for event content */
+.timeline-event p {
+  background: white; /* White background */
+  padding: 1.5rem; /* Padding inside the event box */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Starts off the screen (upward) */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Ends at normal position */
+  }
+}
+
+/* Different fade-in animations for various elements */
+.fade-in {
+  animation: fadeIn 2s ease forwards; /* Standard fade-in */
+}
+
+.fade-in-up {
+  animation: fadeInUp 2s ease forwards; /* Fade in from below */
+}
+
+.fade-in-left {
+  animation: fadeInLeft 2s ease forwards; /* Fade in from the left */
+}
+
+.fade-in-right {
+  animation: fadeInRight 2s ease forwards; /* Fade in from the right */
+}
+
+/* Keyframes for other animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Footer styling */
+footer {
+  background: #333;
+  color: #ffcc00;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px; 
+}
+
+footer p {
+  margin: 0;
+}
+

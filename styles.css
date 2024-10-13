@@ -75,14 +75,14 @@ header {
 
 /* Large font size and bottom margin for the main heading */
 .header-content h1 {
-  font-size: 3rem; /* Large, attention-grabbing font size */
+  font-size: 2.7rem; /* Large, attention-grabbing font size */
   margin-bottom: 1rem; /* Spacing between the heading and subtitle */
 }
 
 /* Styling for the subtitle: different font family for a distinctive, serif look */
 .subtitle {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-style: italic; /* Italic style for emphasis */
   font-weight: 400; /* Lighter weight for elegance */
   color: #ffffff; /* Softer gray */
